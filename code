@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            padding: 0 20px;
+            background: linear-gradient(to bottom right, #a27c29, #b19127);
+            color: white;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        .cta {
+            display: inline-block;
+            margin-bottom: 15px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #da7e07;
+            background: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .cta:hover {
+            background: #333;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">POORVIKA</div>
+        <h1>Welcome to Our Showroom</h1>
+        <p>Your one-stop solution for all your needs. Join us today and transform the way you work and live.</p>
+        <a href="#" class="cta">Get Started</a>
+        <nav>
+            <a href="about.html" class="cta">About Us</a>
+            <a href="contact.html" class="cta">Contact</a>
+            <a href="Showroom.html" class="cta">Showroom</a>
+        </nav>
+    </div>
+
+    
+    <div id="about" style="display:none; padding: 20px; background-color: #f4f4f4; color: #333;">
+        <h1>About Us</h1>
+        <p>POORVIKA is a vibrant and diverse community
+            that brings
+            Shop the best deals at Poorvika Online Store. Top gadgets, great prices, shop now. Discover unbeatable deals at Poorvika Online. Shop top gadgets & save big today. EMI Available. No Cost EMI. Free shipping. Live Demo.</p>
+        <a href="index.html" class="cta">Back to Home</a>
+    </div>
+
+   
+    <div id="contact" style="display:none; padding: 20px; background-color: #f4f4f4; color: #333;">
+        <h1>Contact Us</h1>
+        <p>Have questions? Reach out to us at poorvika@rjpm.com or call us at 8500056471.</p>
+        <a href="index.html" class="cta">Back to Home</a>
+    </div>
+
+  
+    <div id="internship" style="display:none; padding: 20px; background-color: #f4f4f4; color: #333;">
+        <h1>Shop at Poorvika</h1>
+        <p>Experience the New Way of Shopping from Poorvika, India's No1 Tech Retailer. Grab All your Electronic needs at the Best Price Online Today!</p>
+        <a href="index.html" class="cta">Back to Home</a>
+    </div>
+
+    <script>
+       
+        document.querySelectorAll('a[href]').forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const target = event.target.getAttribute('href').replace('.html', '');
+
+                document.querySelectorAll('div[id]').forEach(page => {
+                    page.style.display = page.id === target ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
